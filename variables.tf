@@ -54,3 +54,8 @@ variable "rancher_server_bootstrap_admin_password" {
     error_message = "Error : the variable 'rancher_server_bootstrap_admin_password' must be non-empty."
   }
 }
+variable "rancher_server_use_self_signed_certs" {
+  description = "Use self-signed certs"
+  type        = bool
+  default     = true
+}
