@@ -8,3 +8,6 @@ output "rancher2_bootstrap_admin_token" {
   value       = rancher2_bootstrap.admin.token
   description = ""
 }
+//output "rancher_server_aws_cloud_credential_name" {
+//  value = rancher2_cloud_credential.aws.name
+//}

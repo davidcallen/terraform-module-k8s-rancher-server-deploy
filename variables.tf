@@ -1,3 +1,6 @@
+variable "aws_region" {
+  type = string
+}
 variable "node_public_ip" {
   type        = string
   description = "Public IP of compute node for Rancher Server cluster"
@@ -59,3 +62,11 @@ variable "rancher_server_use_self_signed_certs" {
   type        = bool
   default     = true
 }
+//variable "aws_user_credential_access_key" {
+//  description = "An AWS User credentials to configure in Rancher Server for it to deploy Cluster to AWS."
+//  type = string
+//}
+//variable "aws_user_credential_secret_key" {
+//  description = "An AWS User credentials to configure in Rancher Server for it to deploy Cluster to AWS."
+//  type = string
+//}
