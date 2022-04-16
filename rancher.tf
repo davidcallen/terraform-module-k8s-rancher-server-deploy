@@ -20,3 +20,17 @@ resource "rancher2_bootstrap" "admin" {
 //    default_region = var.aws_region
 //  }
 //}
+
+# Create a new rancher2 Auth Config for OKTA IdP
+resource "rancher2_auth_config_okta" "okta" {
+  count                = (length(var.okta_auth_idp_metadata_content) > 0) ? 1 : 0
+  user_name_field      = "userName"
+  display_name_field   = "displayName"
+  groups_field         = "groups"
+  idp_metadata_content = var.okta_auth_idp_metadata_content
+  rancher_api_host     = "https://${var.rancher_server_dns}/v1-saml/okta/saml/acs"
+  sp_cert              = "<SP_CERT>"
+  sp_key               = "<SP_KEY>"
+  uid_field            = "userName"
+  enabled              = true
+}

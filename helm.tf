@@ -9,6 +9,7 @@ resource "helm_release" "cert_manager" {
   namespace        = "cert-manager"
   create_namespace = true
   wait             = true
+  wait_for_jobs    = true
   set {
     name  = "installCRDs"
     value = "true"
@@ -27,6 +28,7 @@ resource "helm_release" "rancher_server" {
   namespace        = "cattle-system"
   create_namespace = true
   wait             = true
+  wait_for_jobs    = true
   set {
     name  = "hostname"
     value = var.rancher_server_dns

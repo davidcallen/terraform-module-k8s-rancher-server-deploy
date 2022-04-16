@@ -62,6 +62,9 @@ variable "rancher_server_use_self_signed_certs" {
   type        = bool
   default     = true
 }
+variable "okta_auth_idp_metadata_content" {
+  type = string
+}
 //variable "aws_user_credential_access_key" {
 //  description = "An AWS User credentials to configure in Rancher Server for it to deploy Cluster to AWS."
 //  type = string
